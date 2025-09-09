@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
+import 'package:notes_app/views/widgets/model_sheet_button_item.dart';
 import 'package:notes_app/views/widgets/notes_item.dart';
 
 class HomeVies extends StatelessWidget {
@@ -16,6 +18,21 @@ class HomeVies extends StatelessWidget {
         itemBuilder: (context, index) {
           return NotesItem();
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            context: context,
+            builder: (context) {
+              return ModelSheetButtonItem();
+            },
+          );
+        },
+        backgroundColor: kPrimaryColor,
+        child: Icon(Icons.add, color: Colors.black),
       ),
     );
   }
