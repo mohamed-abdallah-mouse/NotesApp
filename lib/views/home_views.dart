@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/notes_item.dart';
 
 class HomeVies extends StatelessWidget {
   const HomeVies({super.key});
@@ -9,6 +10,12 @@ class HomeVies extends StatelessWidget {
       appBar: AppBar(
         title: Text('Notes'),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return NotesItem();
+        },
       ),
     );
   }
