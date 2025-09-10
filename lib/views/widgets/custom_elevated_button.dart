@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/edit_notes.dart';
 
 import '../../constants.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key});
-
+  const CustomElevatedButton({super.key, this.onPressed});
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return EditNotes();
-            },
-          ),
-        );
-      },
+      onPressed: onPressed,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Text('Ok', style: TextStyle(color: Colors.black)),
