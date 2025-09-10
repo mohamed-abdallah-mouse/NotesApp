@@ -17,21 +17,21 @@ class NotesItem extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return EditNotes(note: noteModel,);
+                return EditNotes(note: noteModel);
               },
             ),
           );
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.black,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(16),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(5, 3),
+                spreadRadius: 1,
+                blurRadius: 3,
+                offset: Offset(1, 1),
               ),
             ],
           ),
