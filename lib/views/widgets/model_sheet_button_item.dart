@@ -15,7 +15,7 @@ class ModelSheetButtonItem extends StatelessWidget {
           TextFieldItem(hint: 'Title'),
           SizedBox(height: 16),
           CustomElevatedButton(),
-          SizedBox(height: 400),
+          SizedBox(height: MediaQuery.of(context).viewInsets.bottom + 20),
         ],
       ),
     );
