@@ -14,7 +14,7 @@ class TextFieldItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onSaved: onSaved,
+      onChanged: onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
           return 'failed  is  required';

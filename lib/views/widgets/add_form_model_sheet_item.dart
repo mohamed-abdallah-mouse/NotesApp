@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/models/note_model/note_model.dart';
 import 'package:notes_app/views/widgets/text_field_item.dart';
 
 import '../edit_notes.dart';
@@ -41,6 +44,15 @@ class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
           CustomElevatedButton(
             onPressed: () {
               if (formKey.currentState!.validate()) {
+                final String date =
+                    ' ${DateTime.now().hour}:${DateTime.now().day}:${DateTime.now().year}';
+                NoteModel note = NoteModel(
+                  title: title!,
+                  content: content!,
+                  data: date,
+                  color: Colors.black.value,
+                );
+                BlocProvider.of<AddNoteCubit>(context).addNote(note);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
