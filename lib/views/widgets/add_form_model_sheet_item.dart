@@ -4,7 +4,6 @@ import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model/note_model.dart';
 import 'package:notes_app/views/widgets/text_field_item.dart';
 
-import '../edit_notes.dart';
 import 'custom_elevated_button.dart';
 
 class AddFormModelSheetItem extends StatefulWidget {
@@ -53,15 +52,9 @@ class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
                   color: Colors.black.value,
                 );
                 BlocProvider.of<AddNoteCubit>(context).addNote(note);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return EditNotes();
-                    },
-                  ),
-                );
+
                 formKey.currentState!.save();
+                Navigator.pop(context);
               } else {
                 autoValidateMode = AutovalidateMode.always;
                 setState(() {});
