@@ -10,7 +10,7 @@ class NotesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: GestureDetector(
         onTap: () {
           Navigator.push(
@@ -40,8 +40,18 @@ class NotesItem extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.all(8),
-                title: Text(noteModel.title),
-                subtitle: Text(noteModel.content),
+                title: Text(
+                  noteModel.title,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: 6),
+                  child: Text(
+                    noteModel.content,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
                 trailing: IconButton(
                   onPressed: () {
                     noteModel.delete();

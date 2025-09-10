@@ -65,11 +65,14 @@ class HomeVies extends StatelessWidget {
         builder: (context, state) {
           var note = BlocProvider.of<NotesCubit>(context).getNote();
           BlocProvider.of<NotesCubit>(context).getNote();
-          return ListView.builder(
-            itemCount: note.length,
-            itemBuilder: (context, index) {
-              return NotesItem(noteModel: note[index]);
-            },
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 65),
+            child: ListView.builder(
+              itemCount: note.length,
+              itemBuilder: (context, index) {
+                return NotesItem(noteModel: note[index]);
+              },
+            ),
           );
         },
       ),
