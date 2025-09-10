@@ -45,7 +45,7 @@ class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
             onPressed: () {
               if (formKey.currentState!.validate()) {
                 final String date =
-                    ' ${DateTime.now().hour}:${DateTime.now().day}:${DateTime.now().year}';
+                    ' ${DateTime.now().day}:${DateTime.now().month}:${DateTime.now().year}';
                 NoteModel note = NoteModel(
                   title: title!,
                   content: content!,

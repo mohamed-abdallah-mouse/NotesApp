@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/views/edit_notes.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({super.key});
-
+  const NotesItem({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.date,
+  });
+  final String title, subtitle, date;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,8 +42,8 @@ class NotesItem extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsets.all(8),
-                title: Text('First Note'),
-                subtitle: Text('Tab to add note'),
+                title: Text(title),
+                subtitle: Text(subtitle),
                 trailing: IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.delete),
@@ -46,7 +51,7 @@ class NotesItem extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 40, top: 8, bottom: 16),
-                child: Text('31/10/2001'),
+                child: Text('$date'),
               ),
             ],
           ),
