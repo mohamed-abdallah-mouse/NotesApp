@@ -14,7 +14,7 @@ class AddFormModelSheetItem extends StatefulWidget {
 class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  String? title, subtitle;
+  String? title, content;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -27,6 +27,14 @@ class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
             hint: 'Title',
             onSaved: (value) {
               title = value;
+            },
+          ),
+          SizedBox(height: 16),
+          TextFieldItem(
+            hint: 'subtitle',
+            maxLines: 5,
+            onSaved: (value) {
+              content = value;
             },
           ),
           SizedBox(height: 16),
