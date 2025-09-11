@@ -1,16 +1,52 @@
-# notes_app
+# Notes App 📝
 
-A new Flutter project.
+## 📌 Overview
+A customizable **Notes Application** built with **Flutter**.  
+This app lets users create, edit, and delete notes, with **local storage powered by Hive**.  
+It also provides a **theme switcher** (Dark/Light) and a **color picker** to customize note text colors for a more personalized experience.
 
-## Getting Started
+## 🛠️ Technologies & Tools
+- **Flutter & Dart**
+- **Hive** (Local NoSQL Database)
+- **Cubit** (State Management)
+- **OOP Principles & Clean Architecture**
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
+- 📝 Add, edit, and delete notes easily
+- 🎨 Color Picker → choose your note text color
+- 🌙 Theme Switcher → Dark mode / Light mode via Drawer
+- 📱 Responsive design that works across screen sizes
+- ⚡ Persistent storage with Hive for offline use
+- 🛠️ State management using Cubit for clean logic separation
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Screens
+- **Home Screen** → Displays all saved notes, tap on any note to edit
+- **Add/Edit Screen** → Create a new note or update an existing one
+- **Drawer** → Switch theme (dark/light)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🖼️ Screenshots
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Home Screen                          | Drawer                              | Light  Mode                            | Add Note                           | Edit Note                            | Color Picker                              | 
+|--------------------------------------|-------------------------------------|----------------------------------------|------------------------------------|--------------------------------------|-------------------------------------------|
+| ![Home](screen_shoots/home_view.jpg) | ![Drawer](screen_shoots/drawer.jpg) | ![Light](screen_shoots/light_mode.jpg) | ![Add](screen_shoots/add_note.jpg) | ![Edit](screen_shoots/edit_note.jpg) | ![Picker](screen_shoots/color_picker.jpg) |
+
+
+## 📂 Project Structure
+- `lib/cubits/` → Business logic with Cubit
+- `lib/models/` → Note model
+- `lib/views/` → Home, Add/Edit Note, etc.
+- `lib/views/widgets/` → Reusable components (inputs, buttons, etc.)
+
+## 🚧 Future Improvements
+- 🔍 **Search functionality** → find notes quickly by keyword
+- ⏰ **Reminders/Notifications** → set alerts for important notes
+- ☁️ **Cloud Sync** → backup notes with Firebase or Google Drive
+- 📌 **Pin/Archive Notes** → keep important notes on top
+- 🔒 **Password Protection** → secure sensitive notes
+
+## ▶️ Demo
+[Download APK](https://drive.google.com/your-apk-link)
+
+## 👨‍💻 Author
+Mohamed Abdalla Moussa Ibrahim  
+[GitHub](https://github.com/your-username) | [LinkedIn](https://linkedin.com/in/your-profile)
