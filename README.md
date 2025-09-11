@@ -45,8 +45,8 @@ It also provides a **theme switcher** (Dark/Light) and a **color picker** to cus
 - 🔒 **Password Protection** → secure sensitive notes
 
 ## ▶️ Demo
-[Download APK](https://drive.google.com/your-apk-link)
+[Download APK](https://drive.google.com/file/d/18OWOiuoeHXkAaOFTsT0FT5FhrhPrz4ly/view?usp=drivesdk)
 
 ## 👨‍💻 Author
 Mohamed Abdalla Moussa Ibrahim  
-[GitHub](https://github.com/your-username) | [LinkedIn](https://linkedin.com/in/your-profile)
+[GitHub](https://github.com/mohamed-abdallah-mouse/NotesApp) | [LinkedIn](https://www.linkedin.com/in/mohamed-abdullah-mouse-69419a1b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
