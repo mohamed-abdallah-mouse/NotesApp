@@ -6,11 +6,18 @@ import 'package:notes_app/cubits/theme_mode_cubit.dart';
 import 'package:notes_app/views/widgets/model_sheet_button_item.dart';
 import 'package:notes_app/views/widgets/notes_item.dart';
 
+import '../models/note_model/note_model.dart';
+
 class HomeVies extends StatelessWidget {
   const HomeVies({super.key});
 
   @override
   Widget build(BuildContext context) {
+    late NoteModel noteModel;
+    List<NoteModel> note = BlocProvider.of<NotesCubit>(context).getNote();
+    for (int i = 0; i < note.length; i++) {
+      noteModel = note[i];
+    }
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -63,6 +70,7 @@ class HomeVies extends StatelessWidget {
       ),
       body: BlocBuilder<NotesCubit, NotesState>(
         builder: (context, state) {
+          BlocProvider.of<NotesCubit>(context).getNote();
           var note = BlocProvider.of<NotesCubit>(context).getNote();
           BlocProvider.of<NotesCubit>(context).getNote();
           return Padding(
@@ -88,6 +96,7 @@ class HomeVies extends StatelessWidget {
               return ModelSheetButtonItem();
             },
           );
+          BlocProvider.of<NotesCubit>(context).getNote();
         },
         backgroundColor: kPrimaryColor,
         child: Icon(Icons.add, color: Colors.black),

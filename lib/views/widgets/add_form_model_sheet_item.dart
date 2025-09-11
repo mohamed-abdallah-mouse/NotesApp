@@ -49,7 +49,11 @@ class _AddFormModelSheetItemState extends State<AddFormModelSheetItem> {
                   title: title!,
                   content: content!,
                   data: date,
-                  color: Colors.black.value,
+                  textColor: Colors.black.value,
+                  containerColor: Theme.of(
+                    context,
+                  ).scaffoldBackgroundColor.value,
+                  contantColor: Colors.black.value,
                 );
                 BlocProvider.of<AddNoteCubit>(context).addNote(note);
 

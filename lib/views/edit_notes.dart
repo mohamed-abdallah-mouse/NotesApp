@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/models/note_model/note_model.dart';
+import 'package:notes_app/views/widgets/color_picker.dart';
 
 class EditNotes extends StatefulWidget {
   const EditNotes({super.key, required this.note});
@@ -10,6 +11,7 @@ class EditNotes extends StatefulWidget {
 
 class _EditNotesState extends State<EditNotes> {
   String? title, content;
+  int? newColor;
   late TextEditingController titleController;
   late TextEditingController contentController;
   @override
@@ -48,6 +50,7 @@ class _EditNotesState extends State<EditNotes> {
             child: Column(
               children: [
                 TextField(
+                  style: TextStyle(color: Color(widget.note.textColor)),
                   controller: titleController,
                   onChanged: (value) {
                     title = value;
@@ -59,6 +62,7 @@ class _EditNotesState extends State<EditNotes> {
                 ),
                 SizedBox(height: 16),
                 TextField(
+                  style: TextStyle(color: Color(widget.note.contantColor)),
                   controller: contentController,
                   maxLines: null,
                   onChanged: (value) {
@@ -73,6 +77,26 @@ class _EditNotesState extends State<EditNotes> {
             ),
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return ColorPickerWithButton(
+                  note: widget.note,
+                  onColorChanged: (color) {
+                    newColor = color.value;
+                  },
+                  onPressed: () {
+                    saveData();
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            );
+          },
+          child: Icon(Icons.color_lens),
+        ),
       ),
     );
   }
@@ -86,6 +110,8 @@ class _EditNotesState extends State<EditNotes> {
   void saveData() {
     widget.note.title = title ?? widget.note.title;
     widget.note.content = content ?? widget.note.content;
+    widget.note.textColor = newColor ?? widget.note.textColor;
+    widget.note.contantColor = newColor ?? widget.note.contantColor;
     widget.note.save();
   }
 }
