@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
-import 'package:notes_app/cubits/theme_mode_cubit.dart';
+import 'package:notes_app/cubits/theme_cubit/theme_mode_cubit.dart';
 import 'package:notes_app/views/widgets/model_sheet_button_item.dart';
 import 'package:notes_app/views/widgets/notes_item.dart';
 
